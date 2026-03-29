@@ -1,0 +1,34 @@
+spring:
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/v1/users/**
+
+            - id: book-service
+              uri: lb://BOOK-SERVICE
+              predicates:
+                - Path=/api/v1/books/**
+
+            - id: rental-service
+              uri: lb://RENTAL-SERVICE
+              predicates:
+                - Path=/api/v1/rentals/**
+
+          default-filters:
+            - PreserveHostHeader
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "http://localhost:5173"
+                allowed-methods: "*"
+                allowed-headers: "*"
+
+server:
+  port: 7000

@@ -4,8 +4,12 @@ spring:
       enabled: true
 
   mongodb:
-    uri: mongodb://root:6CaZxOSo1YNMZhobEtL8JLMjZx8K1dr9hjN_qZ_lAZF25d_2@0aad1385-5fbd-46d2-8243-04fb0e28ada2.asia-southeast1.firestore.goog:443/db-bookrental?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false
-
+    host: localhost
+    port: 13500
+    database: book-rental
+    username: root
+    password: mongodb
+    authentication-database: admin
 
 server:
   port: 0

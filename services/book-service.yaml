@@ -35,4 +35,4 @@ eureka:
 
 app:
   storage:
-    path: ${user.home}/.ijse/eca/books
+    path: ${user.home}/.ijse/bookrental/books
